@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+#root {
+  width: 100vw;
+  height: 100%;
+  /* background-color: #d9afd9; */
+  background-image: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%);
+  /* background-image: linear-gradient( to right, #8e9eab, #eef2f3); */
+  /* background: linear-gradient(to right, #2c3e50, #3498db); */
+  /* background-image: linear-gradient(to right, #dae2f8, #d6a4a4); */
+}
