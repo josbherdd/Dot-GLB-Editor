@@ -320,7 +320,7 @@ export default function App() {
         "
       >
         <img
-          src="${import.meta.env.BASE_URL}models/expand.png"
+          src={"${import.meta.env.BASE_URL}models/expand.png"}
           alt="icon"
           className="w-5 h-5 opacity-80"
         />
