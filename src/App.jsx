@@ -8,7 +8,6 @@ function Model({ materialConfigs, setMaterialConfigs, textureOptions, modelPath 
     
   const { scene } = useGLTF(modelPath)
 
-// Cargamos texturas según tipo
   const colorMaps = {}
   Object.entries(textureOptions.color).forEach(([key, url]) => {
   colorMaps[key] = useTexture(url, (t) => (t.flipY = false))
@@ -37,14 +36,12 @@ function Model({ materialConfigs, setMaterialConfigs, textureOptions, modelPath 
   
   const [foundMaterials, setFoundMaterials] = useState([])
 
-//Detección de materiales en el modelo
   useEffect(() => {
     const found = []
 
   scene.traverse((child) => {
       if (child.isMesh) {
 
-        //proyecta sombra
         child.castShadow = true     
         child.receiveShadow = true 
 
@@ -58,7 +55,6 @@ function Model({ materialConfigs, setMaterialConfigs, textureOptions, modelPath 
     })
     setFoundMaterials(found)
 
-    //Crear un nuevo objeto de configuraciones desde cero
     const newConfigs = {}
     found.forEach((mat) => {
       newConfigs[mat.uuid] = {
@@ -71,13 +67,10 @@ function Model({ materialConfigs, setMaterialConfigs, textureOptions, modelPath 
       }
     })
 
-    //Reemplazar completamente las configuraciones del modelo anterior
     setMaterialConfigs(newConfigs)
   }, [scene, setMaterialConfigs])
 
 
-
-  //Aplicar texturas individualmente según configuración cuando se selecciona una textura en la UI
   useEffect(() => {
     foundMaterials.forEach((mat) => {
       const cfg = materialConfigs[mat.uuid]
@@ -169,7 +162,6 @@ export default function App() {
           <shadowMaterial transparent opacity={0.35} />
           </mesh>
 
-          {/* La grida */}
           <Grid args={[40, 40]} fadeDistance={5} cellSize={0.1} cellThickness={0.6}/>
           
         </Canvas>
@@ -307,7 +299,7 @@ export default function App() {
       <button
         className=" absolute bg-white/70 font-medium bottom-5 left-1/2 -translate-x-1/2 px-5 py-2 rounded-full bg-blue text-gray-600 backdrop-blur shadow-md hover:bg-white/90 hover:shadow-lg"
       >
-        + Agregar modelo
+        + Add Model
       </button>
 
       <button
