@@ -320,7 +320,7 @@ export default function App() {
         "
       >
         <img
-          src={"./models/expand.png"}
+          src="./models/expand.png"
           alt="icon"
           className="w-5 h-5 opacity-80"
         />

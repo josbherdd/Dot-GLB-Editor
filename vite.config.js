@@ -4,6 +4,6 @@ import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/Dot-GLB-Editor/',
   plugins: [react(), tailwindcss()],
+  base: '/Dot-GLB-Editor/',
 })
