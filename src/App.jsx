@@ -95,29 +95,29 @@ function Model({ materialConfigs, setMaterialConfigs, textureOptions, modelPath 
 
 export default function App() {
 
-  const [modelPath, setModelPath] = useState('${import.meta.env.BASE_URL}3d-models/OutdoorChair004.glb');
+  const [modelPath, setModelPath] = useState('./3d-models/OutdoorChair004.glb');
   const [materialConfigs, setMaterialConfigs] = useState({});
 
   const textureOptions = {
     color: {
-      default: '${import.meta.env.BASE_URL}models/textures2/outdoor-chair-004-col-metalness-4k.png',
-      wood: '${import.meta.env.BASE_URL}models/textures2/texture-1.jpg',
+      default: './models/textures2/outdoor-chair-004-col-metalness-4k.png',
+      wood: './models/textures2/texture-1.jpg',
     },
     normal: {
-      default: '${import.meta.env.BASE_URL}models/textures2/outdoor-chair-004-nrm-metalness-4k.png',
-      wood: '${import.meta.env.BASE_URL}models/textures2/texture-1-normal.png',
+      default: './models/textures2/outdoor-chair-004-nrm-metalness-4k.png',
+      wood: './models/textures2/texture-1-normal.png',
     },
     roughness: {
-      default: '${import.meta.env.BASE_URL}models/textures2/outdoor-chair-004-roughness-metalness-4k.png',
-      rough: '${import.meta.env.BASE_URL}models/textures2/texture-1-roughness.jpg',
+      default: './models/textures2/outdoor-chair-004-roughness-metalness-4k.png',
+      rough: './models/textures2/texture-1-roughness.jpg',
     },
     metalness: {
-      default: '${import.meta.env.BASE_URL}models/textures2/outdoor-chair-004-metalness-metalness-4k.png',
-      metal: '${import.meta.env.BASE_URL}models/textures2/texture-2-metal.jpg',
+      default: './models/textures2/outdoor-chair-004-metalness-metalness-4k.png',
+      metal: './models/textures2/texture-2-metal.jpg',
     },
     ao: {
-      default: '${import.meta.env.BASE_URL}models/textures2/outdoor-chair-004-ao-metalness-4k.png',
-      white: '${import.meta.env.BASE_URL}models/textures2/white-ao-texture.png',
+      default: './models/textures2/outdoor-chair-004-ao-metalness-4k.png',
+      white: './models/textures2/white-ao-texture.png',
     },
   }
 
@@ -130,7 +130,7 @@ export default function App() {
         <Canvas camera={{ fov: 50, near: 0.1, far: 10, position: [-1, 1.7, 2] }}  shadows >
           <OrbitControls />
 
-          <Environment background={ false } environmentIntensity={0.1} files={ '${import.meta.env.BASE_URL}models/textures2/rogland_sunset_4k.jpg' } />
+          <Environment background={ false } environmentIntensity={0.1} files={ './models/textures2/rogland_sunset_4k.jpg' } />
 
           <SoftShadows size={30} samples={20} focus={0.8} />
 
@@ -170,8 +170,8 @@ export default function App() {
 
               <button
                 onClick={() => {
-                  useGLTF.clear('${import.meta.env.BASE_URL}3d-models/OutdoorChair004.glb')
-                  setModelPath('${import.meta.env.BASE_URL}3d-models/OutdoorChair004.glb')}}
+                  useGLTF.clear('./3d-models/OutdoorChair004.glb')
+                  setModelPath('./3d-models/OutdoorChair004.glb')}}
                 className="px-4 py-2 rounded-lg bg-white text-gray-700 shadow-lg shadow-black/7 mr-3 mb-3 border border-gray-100 hover:border-blue-200 transition-colors duration-200"
               >
                 Model 1
@@ -179,8 +179,8 @@ export default function App() {
                       
               <button
                 onClick={() => {
-                  useGLTF.clear('${import.meta.env.BASE_URL}3d-models/flower-pot.glb')
-                  setModelPath('${import.meta.env.BASE_URL}3d-models/flower-pot.glb')}}
+                  useGLTF.clear('./3d-models/flower-pot.glb')
+                  setModelPath('./3d-models/flower-pot.glb')}}
                 className="px-4 py-2 rounded-lg bg-white text-gray-700 shadow-lg shadow-black/7 mr-2 mb-3 border border-gray-100 hover:border-blue-200 transition-colors duration-200"
               >
                 Model 2
@@ -320,7 +320,7 @@ export default function App() {
         "
       >
         <img
-          src={"${import.meta.env.BASE_URL}models/expand.png"}
+          src={"./models/expand.png"}
           alt="icon"
           className="w-5 h-5 opacity-80"
         />
